@@ -1,4 +1,4 @@
-package com.kipis.mylotto
+package com.example.mylotto
 
 import org.junit.Test
 

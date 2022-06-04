@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MyLotto</string>
+
+    <string name="main_tv_create">생성</string>
+    <string name="main_tv_confirmation">확정</string>
+    <string name="main_tv_content_delete">내용삭제</string>
+    <string name="main_tv_draw_count">뽑기 횟수 : </string>
+    <string name="main_et_hint_draw_count">뽑기횟수입력</string>
+    <string name="main_tv_count">회차 : </string>
+    <string name="main_et_hint_count">회차입력</string>
+    <string name="main_tv_hint_number">번호</string>
+    <string name="main_tv_select">조회</string>
 </resources>

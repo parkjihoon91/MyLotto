@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="purchaseViewModel"
+            type="com.example.mylotto.main.viewmodel.PurchaseViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <android.widget.Button
+                android:id="@+id/create_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/main_tv_create"
+                android:onClick="@{() -> purchaseViewModel.createLottoNumber(input, create)}"/>
+
+            <android.widget.Button
+                android:id="@+id/lotto_check"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/main_tv_confirmation"
+                android:onClick="@{() -> purchaseViewModel.decideLottoNumber(input)}"/>
+
+            <android.widget.Button
+                android:id="@+id/lotto_delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/main_tv_content_delete"
+                android:onClick="@{() -> purchaseViewModel.deleteContent()}"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/main_tv_count" />
+
+            <EditText
+                android:id="@+id/input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:hint="@string/main_et_hint_count"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="5"
+                android:maxLines="1"
+                android:text="@{purchaseViewModel.seq}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/main_tv_draw_count" />
+
+            <EditText
+                android:id="@+id/create"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:hint="@string/main_et_hint_draw_count"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="3"
+                android:maxLines="1"
+                android:visibility="visible"
+                android:text="@{purchaseViewModel.cnt}" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:background="@color/light_gray">
+
+            <TextView
+                android:id="@+id/lotto_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:hint="@string/main_tv_hint_number"
+                android:lineSpacingExtra="7dp"
+                android:text="@{purchaseViewModel.lottoText}"/>
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>
